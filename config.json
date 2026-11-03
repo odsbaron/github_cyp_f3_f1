@@ -1,0 +1,116 @@
+{
+  "run_id": "20261103_F3_F1_dualLightGBM_fixed5_r01",
+  "protocol": "DI-main-nested5x3-v1 fixed-candidate special case",
+  "primary": "PPBR=0.5 F1 + 0.5 F3",
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "params": {
+    "F3": {
+      "n_estimators": 1000,
+      "learning_rate": 0.025,
+      "num_leaves": 15,
+      "max_depth": 5,
+      "min_child_samples": 20,
+      "colsample_bytree": 0.8,
+      "subsample": 0.8,
+      "subsample_freq": 1,
+      "reg_alpha": 0.1,
+      "reg_lambda": 5.0,
+      "objective": "regression_l1",
+      "n_jobs": 4,
+      "random_state": 42,
+      "verbosity": -1,
+      "zero_as_missing": false
+    },
+    "F1": {
+      "n_estimators": 1000,
+      "learning_rate": 0.02228869142958843,
+      "num_leaves": 49,
+      "max_depth": 7,
+      "min_child_samples": 29,
+      "colsample_bytree": 0.33372257189899684,
+      "subsample": 0.9576353844058,
+      "subsample_freq": 1,
+      "reg_alpha": 0.06448659499165932,
+      "reg_lambda": 0.6869391590681246,
+      "objective": "regression_l1",
+      "n_jobs": 4,
+      "random_state": 42,
+      "verbosity": -1,
+      "zero_as_missing": false
+    }
+  },
+  "effective_params": {
+    "F3": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 0.8,
+      "importance_type": "split",
+      "learning_rate": 0.025,
+      "max_depth": 5,
+      "min_child_samples": 20,
+      "min_child_weight": 0.001,
+      "min_split_gain": 0.0,
+      "n_estimators": 1000,
+      "n_jobs": 4,
+      "num_leaves": 15,
+      "objective": "regression_l1",
+      "random_state": 42,
+      "reg_alpha": 0.1,
+      "reg_lambda": 5.0,
+      "subsample": 0.8,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 1,
+      "verbosity": -1,
+      "zero_as_missing": false
+    },
+    "F1": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 0.33372257189899684,
+      "importance_type": "split",
+      "learning_rate": 0.02228869142958843,
+      "max_depth": 7,
+      "min_child_samples": 29,
+      "min_child_weight": 0.001,
+      "min_split_gain": 0.0,
+      "n_estimators": 1000,
+      "n_jobs": 4,
+      "num_leaves": 49,
+      "objective": "regression_l1",
+      "random_state": 42,
+      "reg_alpha": 0.06448659499165932,
+      "reg_lambda": 0.6869391590681246,
+      "subsample": 0.9576353844058,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 1,
+      "verbosity": -1,
+      "zero_as_missing": false
+    }
+  },
+  "representations": {
+    "F1": [
+      "morgan",
+      "avalon",
+      "erg",
+      "rdkit2d"
+    ],
+    "F3": [
+      "morgan_count",
+      "atom_pair",
+      "maccs",
+      "rdkit2d"
+    ]
+  },
+  "seed": 42,
+  "n_jobs": 4,
+  "preprocessing": "upstream float32 features; nonfinite to zero; native RDKit descriptor order; no chirality, scaling or fitted transform",
+  "selection": "fixed single candidate per branch; zero inner fits, no early stopping or weight search",
+  "budget": {
+    "outer_fits": 40,
+    "final_fits": 8
+  },
+  "recommendation": "development evidence only; retain existing recommendation unless separately justified"
+}
